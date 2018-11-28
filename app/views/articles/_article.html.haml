@@ -1,80 +1,11 @@
-.row
-  .col.s12.m4
-    .card
-      .card-image
-        = image_tag('sample-1.jpg')
-        %span.card-title Card Title
-      .card-content
-        %p
-          I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-      .card-action
-        = link_to "show", "#", class: "card-action-show"
-        = link_to "edit", "#", class: "card-action-edit"
-        = link_to "delete", "#", class: "card-action-delete"
-  .col.s12.m4
-    .card
-      .card-image
-        = image_tag('sample-2.jpg')
-        %span.card-title Card Title
-      .card-content
-        %p
-          I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-      .card-action
-        = link_to "show", "#", class: "card-action-show"
-        = link_to "edit", "#", class: "card-action-edit"
-        = link_to "delete", "#", class: "card-action-delete"
-  .col.s12.m4
-    .card
-      .card-image
-        = image_tag('sample-3.jpg')
-        %span.card-title Card Title
-      .card-content
-        %p
-          I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-      .card-action
-        = link_to "show", "#", class: "card-action-show"
-        = link_to "edit", "#", class: "card-action-edit"
-        = link_to "delete", "#", class: "card-action-delete"
-.row
-  .col.s12.m4
-    .card
-      .card-image
-        = image_tag('sample-1.jpg')
-        %span.card-title Card Title
-      .card-content
-        %p
-          I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-      .card-action
-        = link_to "show", "#", class: "card-action-show"
-        = link_to "edit", "#", class: "card-action-edit"
-        = link_to "delete", "#", class: "card-action-delete"
-  .col.s12.m4
-    .card
-      .card-image
-        = image_tag('sample-2.jpg')
-        %span.card-title Card Title
-      .card-content
-        %p
-          I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-      .card-action
-        = link_to "show", "#", class: "card-action-show"
-        = link_to "edit", "#", class: "card-action-edit"
-        = link_to "delete", "#", class: "card-action-delete"
-  .col.s12.m4
-    .card
-      .card-image
-        = image_tag('sample-3.jpg')
-        %span.card-title Card Title
-      .card-content
-        %p
-          I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-      .card-action
-        = link_to "show", "#", class: "card-action-show"
-        = link_to "edit", "#", class: "card-action-edit"
-        = link_to "delete", "#", class: "card-action-delete"
+.col.s12.m4
+  .card
+    .card-image
+      = image_tag article.image.to_s
+      %span.card-title= article.title
+    .card-content
+      %p= article.content
+    .card-action
+      = link_to "show", "#", class: "card-action-show"
+      = link_to "edit", "#", class: "card-action-edit"
+      = link_to "delete", "#", class: "card-action-delete"
