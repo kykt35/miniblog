@@ -2,6 +2,7 @@
   .container
     = form_for @article do |f|
       %h3 投稿する
+      = f.text_field :title, placeholder: 'タイトルを入力してください'
       = f.text_field :content, placeholder: '記事を入力してください'
       = f.file_field :image
       = f.submit 'Send' , class: "new_article__button"
