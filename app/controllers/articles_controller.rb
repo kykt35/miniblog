@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
   def create
@@ -34,7 +35,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.permit(:title, :content, :image).merge(user_id: current_user.id)
+    params.require(:article).permit(:title, :content, :image).merge(user_id: current_user.id)
   end
 
 end
