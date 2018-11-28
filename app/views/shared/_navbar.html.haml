@@ -7,6 +7,8 @@
           = link_to current_user.name, "#"
         %li
           = link_to "ログアウト", destroy_user_session_path, method: :delete
+        %li
+          = link_to "新規投稿", new_article_path
       - else
         %li
           = link_to "ログイン", new_user_session_path

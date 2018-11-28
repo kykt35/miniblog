@@ -1,0 +1,21 @@
+.contents.grey.lighten-4
+  .container.row
+    .col.s12.m12
+      .card
+        .card-image
+          = image_tag @article.image.to_s
+          %span.card-title= @article.title
+        .card-content
+          %p= @article.content
+        - if user_signed_in? && @article.user == current_user
+          .card-action
+            = link_to "edit", edit_article_path(@article)
+            = link_to "delete", article_path(@article), method: :delete,
+  / .container.row
+  /   .col.s12.m12
+  /     .card
+  /       =form_for [@article, @comment] do |f|
+  /         = f.text_field :content, placeholder: 'コメントを入力してください', cols: "1"
+  /         = f.submit 'Send'
+  /       .card-comment
+  /           aaaa
