@@ -1,4 +1,6 @@
-.contents
-  =render partial: "article"
+.contents.grey.lighten-4
+  .row
+    - @articles.each do |article|
+      =render partial: "article", locals: {article: article}
 
 
