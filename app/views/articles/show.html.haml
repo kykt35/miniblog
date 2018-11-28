@@ -1,5 +1,5 @@
 .contents.grey.lighten-4
-  .row
+  .container.row
     .col.s12.m12
       .card
         .card-image
@@ -7,8 +7,15 @@
           %span.card-title= @article.title
         .card-content
           %p= @article.content
-        .card-action
-          = link_to "edit", edit_article_path(@article), class: "card-action-edit"
-          = link_to "delete", article_path(@article), method: :delete,class: "card-action-delete"
-      .card-comment
-        aaaa
+        - if user_signed_in? && @article.user == current_user
+          .card-action
+            = link_to "edit", edit_article_path(@article)
+            = link_to "delete", article_path(@article), method: :delete,
+  / .container.row
+  /   .col.s12.m12
+  /     .card
+  /       =form_for [@article, @comment] do |f|
+  /         = f.text_field :content, placeholder: 'コメントを入力してください', cols: "1"
+  /         = f.submit 'Send'
+  /       .card-comment
+  /           aaaa

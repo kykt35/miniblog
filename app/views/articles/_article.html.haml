@@ -7,5 +7,6 @@
       %p= article.content
     .card-action
       = link_to "show", article_path(article), class: "card-action-show"
-      = link_to "edit", edit_article_path(article), class: "card-action-edit"
-      = link_to "delete", article_path(article), method: :delete,class: "card-action-delete"
+      - if user_signed_in? && article.user == current_user
+        = link_to "edit", edit_article_path(article), class: "card-action-edit"
+        = link_to "delete", article_path(article), method: :delete,class: "card-action-delete"
