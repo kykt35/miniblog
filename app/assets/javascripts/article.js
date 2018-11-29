@@ -25,14 +25,6 @@ $(function(){
   }
   function updateArticles(){
     var article_length = $('.article').length;
-    // var last_article_id = $('.article:first').attr('article-id');
-    // var articles_ids =$('.article').map(function(index,element){
-    // console.log($(element).attr('article-id'));
-    //   return parseInt($(element).attr('article-id'),10);
-    // })
-
-    // console.log("articles_ids  "+articles_ids);
-    // var reader = new FileReader();
     $.ajax({
       type: "GET",
       url: location.href,
