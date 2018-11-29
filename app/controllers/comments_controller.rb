@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   def create
 
     @comment=Comment.create(comment_params) if user_signed_in?
-
     respond_to do |format|
       format.html {
         article = Article.find(@comment.article.id)
