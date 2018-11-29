@@ -1,12 +1,12 @@
 
 .col.s12.m12
   .card
-    %h4= page_title
+    %h4.center-align= page_title
     = form_for article do |f|
       .card-image
         = image_tag @article.image.to_s, id: 'article-image__img'
-        = f.text_field :title, placeholder: 'タイトルを入力してください'
         = f.file_field :image
-      .card-content
+        = f.text_field :title, placeholder: 'タイトルを入力してください'
+      .card-content.clearfix
         = f.text_area :content, placeholder: '記事を入力してください'
-        = f.submit '保存する' , class: "new_article__button btn"
+        = f.submit '保存する' , class: "new_article__button btn right"

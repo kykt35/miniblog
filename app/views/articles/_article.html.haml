@@ -1,12 +1,13 @@
 .col.s12.m4
   .card
     .card-image
-      = image_tag article.image.to_s
+      = link_to article_path(article) do
+        = image_tag article.image.to_s, id: 'article-image__img'
       %span.card-title= article.title
     .card-content
       %p= article.content
-    .card-action
-      = link_to "show", article_path(article), class: "card-action-show"
-      - if user_signed_in? && article.user == current_user
-        = link_to "edit", edit_article_path(article), class: "card-action-edit"
-        = link_to "delete", article_path(article), method: :delete,class: "card-action-delete"
+    / .card-action
+    /   = link_to "show", article_path(article), class: "card-action-show"
+    /   - if user_signed_in? && article.user == current_user
+    /     = link_to "edit", edit_article_path(article), class: "card-action-edit"
+    /     = link_to "delete", article_path(article), method: :delete,class: "card-action-delete"
