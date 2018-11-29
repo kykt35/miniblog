@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    user = User.find(params[:id])
+    @articles = user.articles.order('created_at DESC')
+  end
+
   private
 
   def user_params
