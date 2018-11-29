@@ -2,5 +2,5 @@
   - @articles.each_slice(3) do |articles|
     .row
       - articles.each do |article|
-        =render partial: "article", locals: {article: article}
+        =render partial: "articles/article", locals: {article: article}
 

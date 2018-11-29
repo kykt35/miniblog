@@ -29,11 +29,13 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = Comment.new
+    @comments = @article .comments.includes(:user)
   end
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy if @article.user == current_user
+    @article.destroy if @article.user.id == current_user.id
   end
 
   private

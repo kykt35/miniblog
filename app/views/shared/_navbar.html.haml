@@ -1,10 +1,10 @@
 %nav.clearfix
   .nav-wrapper.blue-grey
-    %a.brand-logo{:href => "#"} MinBlog
+    %a.brand-logo{href: root_path} MinBlog
     %ul#nav-mobile.right.hide-on-med-and-down
       - if user_signed_in?
         %li
-          = link_to current_user.name, "#"
+          = link_to current_user.name, user_path(current_user)
         %li
           = link_to "ログアウト", destroy_user_session_path, method: :delete
         %li
