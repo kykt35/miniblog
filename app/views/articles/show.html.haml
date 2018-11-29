@@ -8,18 +8,18 @@
         .card-content
           %p= @article.content
         - if user_signed_in? && @article.user == current_user
-          .card-action
-            = link_to "edit", edit_article_path(@article)
-            = link_to "delete", article_path(@article), method: :delete
+          .card-action.clearfix
+            = link_to "edit", edit_article_path(@article),class: "edit__btn btn"
+            = link_to "delete", article_path(@article), method: :delete, class: "delete__btn btn"
 
   .container.row
     .col.s12.m12
       .card
         %h5 コメント
-        .card-form
+        .card-form.clearfix
           =form_for [@article, @comment] do |f|
             = f.text_field :content, placeholder: 'コメントを入力してください', cols: "1"
-            = f.submit 'コメントする',class: "btn", id: 'comment-submit__btn'
+            = f.submit 'コメントする',class: "comment-btn btn right", id: 'comment-submit__btn '
         .card-comment
           .comments
             - @comments.each do |comment|

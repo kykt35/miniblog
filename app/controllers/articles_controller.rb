@@ -2,6 +2,10 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:user).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
