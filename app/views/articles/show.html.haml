@@ -19,10 +19,10 @@
         .card-form
           =form_for [@article, @comment] do |f|
             = f.text_field :content, placeholder: 'コメントを入力してください', cols: "1"
-            = f.submit 'Send'
+            = f.submit 'コメントする',class: "btn", id: 'comment-submit__btn'
         .card-comment
-          %ul
+          .comments
             - @comments.each do |comment|
-              %li
+              %p.comment
                 %strong="#{comment.user.name}: "
                 = comment.content
