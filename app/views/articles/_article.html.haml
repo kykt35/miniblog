@@ -1,11 +1,11 @@
-.col.s12.m4
-  .card
-    .card-image
-      = link_to article_path(article) do
+.col.s12.m4.article{"article-id": article.id}
+  = link_to article_path(article) do
+    .card
+      .card-image
         = image_tag article.image.to_s, id: 'article-image__img'
-      %span.card-title= article.title
-    .card-content
-      %p= article.content
+        %span.card-title= article.title
+      .card-content
+        %p= article.content
     / .card-action
     /   = link_to "show", article_path(article), class: "card-action-show"
     /   - if user_signed_in? && article.user == current_user
