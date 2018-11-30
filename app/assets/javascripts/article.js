@@ -13,7 +13,7 @@ $(function(){
       article_html = `<div article-id=${article.id} class="col s12 m4 article">
                         <div class="card">
                         <div class="card-author blue-grey-text darken-3-text center-left">
-                          <a href="/users/${article.id}"><i class="material-icons">face</i>
+                          <a href="/users/${article.user_id}"><i class="material-icons">face</i>
                           ${article.user_name}
                         </div>
                           <div class="card-image">
