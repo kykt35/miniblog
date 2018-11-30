@@ -25,9 +25,9 @@ $(function(){
     .done(function(data){
       console.log("done");
       var html = buildHTML(data);
-      $('.comments').append(html)
-      $('#comment_content').val('')
-      $("#comment-submit__btn").removeAttr("disabled");
+      $('.comments').append(html);
+      $('#comment_content').val('');
+      $('.comment-btn').removeAttr("disabled");
     })
     .fail(function(){
       alert('error');
