@@ -1,8 +1,9 @@
 $(function(){
   var updateTimer = setInterval(function(){update()},5000);
+  console.log('timerstart');
 
   function update(){
-    if ($('.article-area').length !== 0 ){
+    if ($('.articles-area').length !== 0 ){
       updateArticles();
     }
    }
@@ -10,19 +11,23 @@ $(function(){
 
   function buildHTML(article){
       article_html = `<div article-id=${article.id} class="col s12 m4 article">
-                      <a href="/articles/${article.id}"><div class="card">
-                        <div class="card-image">
-                          <img id="article-image__img" src=${article.image}>
-                          <span class="card-title">${article.title}</span>
+                        <div class="card">
+                        <div class="card-author blue-grey-text darken-3-text center-left">
+                          <a href="/users/${article.id}"><i class="material-icons">face</i>
+                          ${article.user_name}
                         </div>
-                          <div class="card-content">
-                            <p>${article.content}</p>
+                          <div class="card-image">
+                            <img id="article-image__img" src=${article.image}>
+                          </div>
+                          <div class="card-title blue-grey-text darken-3-text center-align">
+                            <p>${article.title}</p>
                           </div>
                         </div>
-                      </a>
                     </div>`
     return article_html;
   }
+
+
   function updateArticles(){
     var article_length = $('.article').length;
     $.ajax({
@@ -38,10 +43,10 @@ $(function(){
       console.log('done');
       var i = 0;
       if ((articles.length !==0) && (articles.length !== article_length)){
-        $('.article-area').empty();
+        $('.articles-area').empty();
         articles.forEach(function(article){
           if (i%3 == 0 ){
-            $('.article-area').append($('<div>',{class: 'row'}));
+            $('.articles-area').append($('<div>',{class: 'row'}));
           }
 
           var row =$('.row:last');
