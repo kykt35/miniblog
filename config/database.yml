@@ -52,3 +52,4 @@ production:
   database: miniblog_production
   username: miniblog
   password: <%= ENV['MINIBLOG_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
