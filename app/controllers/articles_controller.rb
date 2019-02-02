@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     if @article.save
 
     else
-      render :index
+      render :new
     end
   end
 

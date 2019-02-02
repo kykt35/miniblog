@@ -1,13 +1,13 @@
 .col.s12.m4.article{"article-id": article.id}
-  = link_to article_path(article) do
-    .card
-      .card-image
+
+  .card
+    .card-author.blue-grey-text.darken-3-text.center-left
+      =link_to user_path(article.user) do
+        %i.material-icons face
+        = article.user.name
+    .card-image
+      = link_to article_path(article) do
         = image_tag article.image.to_s, id: 'article-image__img'
-        %span.card-title= article.title
-      .card-content
-        %p= article.content
-    / .card-action
-    /   = link_to "show", article_path(article), class: "card-action-show"
-    /   - if user_signed_in? && article.user == current_user
-    /     = link_to "edit", edit_article_path(article), class: "card-action-edit"
-    /     = link_to "delete", article_path(article), method: :delete,class: "card-action-delete"
+    .card-title.blue-grey-text.darken-3-text.center-align
+      %p= article.title
+

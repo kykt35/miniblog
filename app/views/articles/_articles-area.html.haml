@@ -1,0 +1,6 @@
+.contents.articles-area.grey.lighten-4
+  - articles.each_slice(3) do |n_articles|
+    .row
+      - n_articles.each do |article|
+        =render partial: "articles/article", locals: {article: article}
+

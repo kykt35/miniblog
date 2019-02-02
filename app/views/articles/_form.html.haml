@@ -4,8 +4,10 @@
     %h4.center-align= page_title
     = form_for article do |f|
       .card-image
-        = image_tag @article.image.to_s, id: 'article-image__img'
-        = f.file_field :image
+        = f.label :image, class: "article-image__label" do
+          = image_tag @article.image.url, id: 'article-image__img'
+          = f.file_field :image,style: "display: none"
+        %p タイトル
         = f.text_field :title, placeholder: 'タイトルを入力してください'
       .card-content.clearfix
         = f.text_area :content, placeholder: '記事を入力してください'
